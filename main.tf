@@ -17,4 +17,12 @@ resource "azurerm_bastion_host" "bastion" {
     subnet_id            = data.azurerm_subnet.subnet.id
     public_ip_address_id = data.azurerm_public_ip.pip.id
   }
+
+  # Optional Configuration
+  sku         = var.bastion_sku
+  scale_units = var.bastion_scale_units
+
+  copy_paste_enabled      = var.bastion_copy_paste_enabled
+  shareable_link_enabled = var.bastion_shareable_link_enabled
+  tunneling_enabled       = var.bastion_tunneling_enabled
 }
