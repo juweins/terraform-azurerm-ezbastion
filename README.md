@@ -25,9 +25,15 @@ Azure does not provide a way to pause / deallocate a Bastion Host. Since this se
 
 ## Pre-requisites
 
-In order to use this module, you need a existing virtual network with at least one subnet. The subnet must be named `AzureBastionSubnet` in accordance to azures' requirements. This module references a existing and free public IP for the Bastion Host.
+In order to use this module, ensure you have already deployed:
+- 1 resource group
+- 1 virtual network
+- 1 subnet
+- 1 public IP address (Standard SKU)
 
 ## Module Inputs
+
+The following inputs are supported:
 
 ### Mandatory Inputs
 
