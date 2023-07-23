@@ -1,5 +1,7 @@
 # Azure Bastion Host Automation Module
 
+[![CHANGELOG](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![COPYRIGHT](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![MIT LICENSE](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE) [![REGISTRY](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/modules/juweins/ezbastion/azurerm/)
+
 This module deploys an Azure Bastion Host in a dedicated subnet and a public IP address. It is intended to be automated via a CI/CD pipeline or other automation tooling (e.g. shell script, PowerShell script, etc.)
 
 ## Module Usage
