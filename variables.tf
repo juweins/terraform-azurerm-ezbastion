@@ -1,19 +1,19 @@
-variable "rg_name" {
+variable "bastion_rg_name" {
     type = string
     description = "Name of the resource group"
 }
 
-variable "vnet_name" {
+variable "bastion_vnet_name" {
     type = string
     description = "Name of the virtual network"
 }
 
-variable "subnet_name" {
+variable "bastion_subnet_name" {
     type = string
     description = "Name of the subnet"
 }
 
-variable "pip_name" {
+variable "bastion_pip_name" {
     type = string
     description = "Name of the public IP address"
 }
