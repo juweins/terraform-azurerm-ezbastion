@@ -21,7 +21,7 @@ module "azure_bastion_host" {
 
 ## Why use this module?
 
-Azure does not provide a way to pause / deallocate a Bastion Host. Since this service is billed hourly, it can be costly to leave it running when not in use. This module provides a way to automate the deployment and removal of a Bastion Host. This is useful for any environments where the Bastion Host is not needed 24/7.
+Azure does not provide a way to pause / deallocate a Bastion Host. Since this service is billed hourly, it can be costly to leave it running when not in use. This module provides a first step to automate the deployment and removal of a Bastion Host. This is useful for any environments where the Bastion Host is not needed 24/7.
 
 ## Pre-requisites
 
