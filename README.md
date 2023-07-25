@@ -74,6 +74,81 @@ The following inputs are supported:
 
 To automate the deployment and removal of the Bastion Host, you can use examples that will be provided in the [examples](examples) directory shortly.
 
+## 1. Automate via shell script
+
+The provided shell script will enable you to automatically deploy and remove your bastion host via the commands `./automation.sh up` and `./automation.sh down`. The script will use the [Terraform CLI](https://www.terraform.io/downloads.html) to deploy and remove the Bastion Host.
+
+### Prerequisites
+
+#### Make the script executable:
+
+```bash
+chmod +x automation.sh
+```
+
+#### Install Terraform
+Ensure you have the [Terraform CLI](https://www.terraform.io/downloads.html) installed.
+
+#### Configure the script
+In order to work properly you have to set your path to the location where your ezBastion directory resides. This is in case you store the shell script outside the module directory. If you store the shell script inside the module directory, you can set the value to **..** .
+
+> Note: I assume that you store the script e.g. in your home directory, but leave the configuration in another directoery. This way, terraform commands inside the script will find the ezBastion module.
+
+```bash
+./automation.sh set ..
+```
+
+#### Set up your environment variables
+
+You need to set the TF_VAR_* inside the script to point to your actual resources. Since the module only creates the bastion service and references all other required resources, these must be present before running the script.
+
+For this reason replace the TF_VAR_* variables in the script with your actual values.
+
+```bash
+nano automation.sh
+```
+
+```bash
+# Set your environment variables here
+export TF_VAR_bastion_resource_group_name="my-resource-group"
+export TF_VAR_bastion_vnet_name="my-vnet"
+export TF_VAR_bastion_subnet_name="AzureBastionSubnet"
+export TF_VAR_bastion_pip_name="my-public-ip"
+export TF_VAR_bastion_name="my-bastion-host"
+export TF_VAR_bastion_ip_configuration_name="my-bastion-host-ip-configuration"
+```
+
+> Note: These variables have a prefix 'bastion' to avoid overriding your existing environment variables. The TF_VAR_ will also be unset at the end of the script to avoid any side effects.
+
+
+
+
+### Usage
+
+#### Deploy the Bastion Host
+
+```bash
+./automation.sh up
+```
+
+#### Remove the Bastion Host
+
+```bash
+./automation.sh down
+```
+
+## 2. Automate via Azure DevOps pipeline / Github Actions
+
+**feature coming soon**
+
+## 3. #Automate via CLI Tool
+
+**feature coming soon**
+
+
+
+
+
 # Contributing
 Contributions are highly welcome!
 
