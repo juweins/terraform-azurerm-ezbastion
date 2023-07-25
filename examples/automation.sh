@@ -32,7 +32,7 @@ function terraform_down() {
 }
 
 # Show Bastion configuration
-function terraform_show() {
+function configuration_show() {
     echo "${bold}Resource Group   : ${normal}$TF_VAR_bastion_rg_name"
     echo "${bold}VNet             : ${normal}$TF_VAR_bastion_vnet_name"
     echo "${bold}Subnet           : ${normal}$TF_VAR_bastion_subnet_name"
@@ -52,7 +52,7 @@ elif [ "$1" = "down" ]; then
 elif [ "$1" = "show" ]; then
     echo "${bold}ezBastion configuration"
     echo "-----------------------${normal}"
-    terraform_show
+    configuration_show
 else
     echo "Usage: $0 [up|down|config]"
     exit 1
